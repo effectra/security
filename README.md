@@ -1,5 +1,3 @@
-Certainly! Here's an example README file for the Effectra\Security library:
-
 # Effectra\Security
 
 Effectra\Security is a PHP library that provides security-related functionalities such as hashing, password management, and CSRF token handling.
