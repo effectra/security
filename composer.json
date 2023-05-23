@@ -1,0 +1,22 @@
+{
+    "name": "effectra/security",
+    "description": "The Effectra Security package.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Effectra\\Security\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mohammed Taha",
+            "email": "info@mohammedtaha.net"
+        }
+    ],
+    "require": {
+        "php": "^8.0.2",
+        "firebase/php-jwt": "dev-main"
+    },
+    "minimum-stability": "dev"
+}
