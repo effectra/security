@@ -1,12 +1,13 @@
 # Effectra\Security
 
-Effectra\Security is a PHP library that provides security-related functionalities such as hashing, password management, and CSRF token handling.
+Effectra\Security is a PHP library that provides security-related functionalities such as hashing, password management, CSRF token handling, and token generation.
 
 ## Features
 
 - Hashing: Securely hash data using various algorithms.
 - Password Management: Generate and verify hashed passwords.
 - CSRF Protection: Generate and validate CSRF tokens for web applications.
+- Token Generation: Create and decode JSON Web Tokens (JWT).
 
 ## Requirements
 
@@ -90,6 +91,33 @@ if ($csrf->validate()) {
 }
 ```
 
+### Token Generation
+
+The `Effectra\Security\Token` class allows you to generate and decode JSON Web Tokens (JWT).
+
+Example usage:
+
+```php
+use Effectra\Security\Token;
+
+$data = ['user_id' => 123];
+
+$config = (object) [
+    'issued_at' => time(),
+    'expirationTime' => time() + 3600, // Expiration time 1 hour from now
+    'issuer' => 'example.com',
+    'key' => 'your-secret-key'
+];
+
+$token = new Token();
+$encodedToken = $token->set($data, $config);
+echo "Encoded token: " . $encodedToken;
+
+$decodedToken = $token->get($encodedToken, $config);
+echo "Decoded token: ";
+print_r($decodedToken);
+```
+
 ## Contributing
 
 Contributions are welcome! Feel free to submit bug reports, feature requests, or pull requests on the [GitHub repository](https://github.com/effectra/security).
@@ -101,3 +129,4 @@ Effectra\Security is licensed under the [MIT License](https://opensource.org/lic
 ## Credits
 
 Effectra\Security is developed and maintained by [Effectra](https://www.effectra.com).
+
