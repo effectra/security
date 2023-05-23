@@ -1,4 +1,4 @@
-# Effectra\Security
+# Effectra Security
 
 Effectra\Security is a PHP library that provides security-related functionalities such as hashing, password management, CSRF token handling, and token generation.
 
