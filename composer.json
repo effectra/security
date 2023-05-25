@@ -16,7 +16,8 @@
     ],
     "require": {
         "php": "^8.0.2",
-        "firebase/php-jwt": "dev-main"
+        "firebase/php-jwt": "dev-main",
+        "effectra/session": "dev-main"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
