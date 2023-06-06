@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Effectra\Core\Security;
+namespace Effectra\Security;
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
