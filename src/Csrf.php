@@ -248,16 +248,5 @@ class Csrf
             $this->session->forget($this->sessionTokenLabel);
         }
     }
-
-    /**
-     * Generates a random token of the specified length.
-     *
-     * @param int $length The length of the token.
-     * @return string The generated token.
-     */
-    public static function generateToken(int $length): string
-    {
-        return bin2hex(random_bytes($length));
-    }
 }
 
