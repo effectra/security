@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Stone\Core\Security;
+namespace Effectra\Core\Security;
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
@@ -61,5 +61,16 @@ class Token
             return false;
         }
         return true;
+    }
+
+     /**
+     * Generates a random token of the specified length.
+     *
+     * @param int $length The length of the token.
+     * @return string The generated token.
+     */
+    public static function generateToken(int $length): string
+    {
+        return bin2hex(random_bytes($length));
     }
 }
