@@ -19,8 +19,14 @@ use stdClass;
 class Token
 {
 
-    public  $config;
+    public $config;
 
+    /**
+     * Sets the configuration for the token.
+     *
+     * @param object $config The configuration object.
+     * @return self
+     */
     public function config(object $config): self
     {
         $this->config = $config;
@@ -28,31 +34,55 @@ class Token
         return $this;
     }
 
+    /**
+     * Retrieves the configuration object.
+     *
+     * @return object The configuration object.
+     */
     public function getConfig()
     {
         return $this->config;
     }
 
-    public function issuedAt($time): self
+    /**
+     * Sets the issued-at time for the token.
+     *
+     * @param int $time The issued-at time.
+     * @return self
+     */
+    public function issuedAt(int $time): self
     {
         $this->config->issued_at = $time;
 
         return $this;
     }
 
-    public function expirationTime($time): self
+    /**
+     * Sets the expiration time for the token.
+     *
+     * @param int $time The expiration time.
+     * @return self
+     */
+    public function expirationTime(int $time): self
     {
         $this->config->expirationTime = $time;
 
         return $this;
     }
 
-    public function issuer($issuer): self
+    /**
+     * Sets the issuer for the token.
+     *
+     * @param string $issuer The issuer.
+     * @return self
+     */
+    public function issuer(string $issuer): self
     {
         $this->config->issuer = $issuer;
 
         return $this;
     }
+
     /**
      * Generates a JSON Web Token (JWT) with the provided data and configuration.
      *
@@ -74,7 +104,6 @@ class Token
      * Decodes and verifies a JSON Web Token (JWT) using the provided token and configuration.
      *
      * @param string $token The JWT to be decoded.
-     * @param object $config The configuration object containing the token settings.
      * @return stdClass The decoded token as an object.
      */
     public function get(string $token): stdClass
@@ -112,7 +141,7 @@ class Token
     }
 
     /**
-     * Generate a random integer token of the specified length.
+     * Generates a random integer token of the specified length.
      *
      * @param int $length The length of the token. Default is 10.
      * @return int The generated random integer token.
