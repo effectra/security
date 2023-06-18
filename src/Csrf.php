@@ -92,7 +92,9 @@ class Csrf
         ?array &$post = null,
         ?array &$server = null
     ) {
-        $this->session->start();
+        if(!$this->session->isActive()){
+            $this->session->start();
+        }
 
         if (!is_null($excludeUrl)) {
             $this->excludeUrl = $excludeUrl;
